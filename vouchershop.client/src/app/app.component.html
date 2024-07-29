@@ -1,0 +1,27 @@
+<h1 id="tableLabel"> Vouchers</h1>
+<button type="button" (click)="checkout($event)">Checkout</button>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!vouchers"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+
+<table *ngIf="vouchers">
+  <thead>
+    <tr>
+      <th>Voucher</th>
+      <th>Price</th>
+      <th>Add</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let voucher of vouchers">
+      <td>{{ voucher.name }}</td>
+      <td>
+        <input type="text" value="{{voucher.amount}}" (blur)="transformAmount($event, voucher)" />
+      </td>
+      <td>
+        <button type="button" (click)="addToCart($event, voucher)">Add To Cart</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

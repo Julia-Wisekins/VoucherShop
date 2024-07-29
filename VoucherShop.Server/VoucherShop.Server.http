@@ -1,0 +1,9 @@
+@VoucherShop.Server_HostAddress = http://localhost:5049
+
+GET {{VoucherShop.Server_HostAddress}}/voucher/
+Accept: application/json
+
+POST {{VoucherShop.Server_HostAddress}}/voucher/
+Accept: application/json
+
+###
