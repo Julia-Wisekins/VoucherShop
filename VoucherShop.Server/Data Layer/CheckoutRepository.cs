@@ -18,17 +18,17 @@ namespace VoucherShop.Server.Data_Layer
 
         public Task<IEnumerable<CheckOut>> GetAll()
         {
-            return new Task<IEnumerable<CheckOut>>(() => _checkout);
+            return Task.Factory.StartNew(() => _checkout.AsEnumerable());
         }
 
         public Task<IEnumerable<CheckOut>> GetById(int id)
         {
-            return new Task<IEnumerable<CheckOut>>(() => _checkout.Where(x => x.Id == id));
+            return Task.Factory.StartNew(() => _checkout.Where(x => x.Id == id));
         }
 
         public Task<IEnumerable<CheckOut>> Search(string search)
         {
-            return new Task<IEnumerable<CheckOut>>(() => _checkout.Where(x => x.CartID.ToString() == search));
+            return Task.Factory.StartNew(() => _checkout.Where(x => x.CartID.ToString() == search));
         }
 
         public void Update(CheckOut entity)

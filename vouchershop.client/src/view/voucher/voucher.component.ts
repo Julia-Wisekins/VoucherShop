@@ -12,9 +12,9 @@ interface voucher {
 }
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  selector: 'voucher-root',
+  templateUrl: './voucher.component.html',
+  styleUrl: './voucher.component.css'
 })
 export class AppComponent implements OnInit {
   public vouchers: voucher[] = [];
